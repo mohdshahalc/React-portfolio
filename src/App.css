@@ -780,8 +780,126 @@ button[type="submit"]:disabled {
   padding-top: 2rem;
 }
 
-@media (max-width: 768px) {
-  .section-spacing {
-    margin-top: 4rem;
+.section-spacing {
+  margin-top: 4rem;
+}
+}
+
+/* --- NEW POLISH STYLES --- */
+
+/* Enhanced Glassmorphism Container */
+.glass-panel {
+  background: rgba(20, 20, 20, 0.6);
+  /* Slightly darker/more opaque for readability */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  opacity: 0.5;
+}
+
+/* About Page Specifics */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 968px) {
+  .about-grid {
+    grid-template-columns: 1.5fr 1fr;
+    /* Asymmetric layout */
+    align-items: start;
   }
+}
+
+.about-text {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+  color: white;
+  font-weight: 600;
+}
+
+/* Skills Page Specifics */
+.skills-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .skills-wrapper {
+    grid-template-columns: repeat(2, 1fr) !important;
+    /* Force 2 columns strictly to avoid 3-column stagger */
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Optional: On very large screens, maybe 4 in a row? 
+       Actually 2x2 is usually nicer for readability than 4 wide strips. 
+       Let's stick to 2x2 or let auto-fit handle 4 if really wide. 
+       But user wanted "proper alignment" so symmetrical 2x2 is safest. */
+}
+
+.skill-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-category h3 {
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Timeline/Experience style for About */
+.timeline-item {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary-color);
 }

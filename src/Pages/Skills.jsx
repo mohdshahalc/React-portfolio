@@ -12,10 +12,17 @@ const Skills = () => {
             <h3>Languages</h3>
             <div className="skill-bar-container">
               <div className="skill-info">
-                <span>JavaScript</span>
+                <span>JavaScript (ES6+)</span>
                 <span>90%</span>
               </div>
               <div className="progress-bar"><div className="progress" style={{ width: '90%' }}></div></div>
+            </div>
+            <div className="skill-bar-container">
+              <div className="skill-info">
+                <span>TypeScript</span>
+                <span>85%</span>
+              </div>
+              <div className="progress-bar"><div className="progress" style={{ width: '85%' }}></div></div>
             </div>
           </div>
         </ScrollReveal>

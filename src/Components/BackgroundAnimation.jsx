@@ -25,8 +25,8 @@ const BackgroundAnimation = () => {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 1; // Velocity X
-                this.vy = (Math.random() - 0.5) * 1; // Velocity Y
+                this.vx = (Math.random() - 0.5) * 0.2; // Slower Velocity X
+                this.vy = (Math.random() - 0.5) * 0.2; // Slower Velocity Y
                 this.size = Math.random() * 2 + 1;
             }
 
