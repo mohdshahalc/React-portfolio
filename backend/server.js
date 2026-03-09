@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
 // Contact Route
 app.use("/api/contact", require("./routes/contact"));
 
-// Start Server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
